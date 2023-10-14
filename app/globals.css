@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .h1 {
+    @apply font-Manrope font-bold text-[56px] leading-[58px] tracking-[2px] uppercase;
+  }
+
+  .h2 {
+    @apply font-Manrope font-bold text-[40px] uppercase leading-[44px] tracking-[1.5px];
+  }
+
+  .h3 {
+    @apply font-Manrope font-bold text-[32px] uppercase leading-[36px] tracking-[1.15px];
+  }
+
+  .h4 {
+    @apply font-Manrope font-bold text-[28px] uppercase leading-[38px] tracking-[2px];
+  }
+
+  .h5 {
+    @apply font-Manrope font-bold text-[24px] uppercase leading-[33px] tracking-[1.7px];
+  }
+
+  .h6 {
+    @apply font-Manrope font-bold text-[18px] uppercase leading-[24px] tracking-[1.3px];
+  }
+
+  .p {
+    @apply font-Manrope text-[14px] uppercase leading-[19px] tracking-[10px];
+  }
+
+  .p-sub {
+    @apply font-Manrope font-bold text-[13px] uppercase leading-[25px] tracking-[1px];
+  }
+
+  .p-body {
+    @apply font-Manrope font-medium text-[15px] leading-[25px];
+  }
+
+  .btn {
+    @apply text-white p-sub px-6 py-3 transition-all;
+  }
+
+  .btn-1 {
+    @apply bg-primary hover:bg-secondary transition-all;
+  }
+
+  .btn-2 {
+    @apply bg-white hover:bg-black transition-all text-black hover:text-white border;
+  }
+
+  .btn-3 {
+    @apply text-black hover:text-primary opacity-50 hover:opacity-100;
+  }
+
+  .link {
+    @apply uppercase font-Manrope text-white text-[13px] font-bold leading-[25px] tracking-[2px] hover:text-primary transition;
+  }
+  .link-active {
+    @apply uppercase font-Manrope text-primary text-[13px] font-bold leading-[25px] tracking-[2px] transition;
+  }
+
+  .left,
+  .right {
+    @apply w-1/2 h-full;
+  }
+
+
+}
