@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="w-[100px] h-[4px] bg-primary absolute top-0 left-0"></div>
         <div className="w-1/2 h-full flex justify-between flex-col items-start">
           <Image
-            src="/main/desktop/logo.svg"
+            src="/desktop/header/logo.svg"
             alt="logo img"
             className="object-contain"
             width={143}
@@ -53,7 +53,9 @@ const Footer = () => {
           <ul className="flex items-end gap-5 justify-end">
             {social_links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className='text-white text-[1.5rem]'>{link.icon}</Link>
+                <Link href={link.href} className="text-white text-[1.5rem]">
+                  {link.icon}
+                </Link>
               </li>
             ))}
           </ul>

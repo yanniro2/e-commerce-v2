@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container mx-auto py-8 text-white flex items-center justify-between border-b-[1px] border-b-bGray">
         <a href="/">
           <Image
-            src="/main/desktop/logo.svg"
+            src="/desktop/header/logo.svg"
             alt="logo img"
             className="object-contain"
             width={143}
@@ -27,7 +27,11 @@ const Header = () => {
         <ul className="flex items-center gap-5 justify-center">
           {links.map((link) => (
             <li key={link.href}>
-                  <Link href={link.href} className={`${pathName === link.href ? "link-active":"link" }`}>
+              <Link
+                href={link.href}
+                className={`${
+                  pathName === link.href ? "link-active" : "link"
+                }`}>
                 {link.label}
               </Link>
             </li>
@@ -35,7 +39,7 @@ const Header = () => {
         </ul>
         <button>
           <Image
-            src="/main/desktop/icon-cart.svg"
+            src="/desktop/header/icon-cart.svg"
             alt="shop icon"
             width={23}
             height={20}

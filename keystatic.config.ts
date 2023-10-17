@@ -1,5 +1,5 @@
 // keystatic.config.ts
-import { config, fields, collection } from "@keystatic/core";
+import { config, fields, collection, singleton } from "@keystatic/core";
 
 export default config({
   storage: {
@@ -10,7 +10,7 @@ export default config({
       label: "Posts",
       slugField: "title",
       path: "src/content/posts/*",
-      format: { contentField: "content" },
+      format: "json",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.document({
@@ -25,23 +25,16 @@ export default config({
     category: collection({
       label: "Category",
       slugField: "title",
-      path: "src/content/category/*",
-      format: { contentField: "content" },
+      path: "src/category/*",
+      format: "json",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: true,
-        }),
-        avatar: fields.image({
-          label: "Category Image",
-          description: "Select image for category ",
+        Desktop: fields.image({
+          label: "Desktop Image",
+          description: "Select image for category",
           // This will output the images in the "public" directory
-          directory: "public/assets/category/desktop/",
-          publicPath: "/assets/category/desktop/",
+          directory: "public/desktop/category/",
+          publicPath: "/desktop/category/",
         }),
       },
     }),
@@ -49,38 +42,52 @@ export default config({
       label: "Headphones",
       slugField: "title",
       path: "src/content/headphones/*",
-      format: { contentField: "content" },
+      format: "json",
       schema: {
+        name: fields.text({ label: "Name" }),
         title: fields.slug({ name: { label: "Title" } }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: true,
-        }),
-        img: fields.image({
-          label: "Headphone Product Image",
+        product: fields.image({
+          label: "Desktop  Product Image",
           description: "Select image for product ",
           // This will output the images in the "public" directory
-          directory: "public/assets/headphones/desktop/",
-          publicPath: "/assets/headphones/desktop/",
+          directory: "public/desktop/category/headphones/product",
+          publicPath: "/desktop/category/headphones/product",
         }),
         newProduct: fields.checkbox({
           label: "New Product",
           description: "Select for this is a new Product",
         }),
-        details: fields.text({
-          label: "Information",
+        description: fields.text({
+          label: "Product Description",
           multiline: true,
         }),
+        price: fields.text({
+          label: "Price",
+        }),
+        quantity: fields.integer({
+          label: "Quantity",
+        }),
+        features: fields.text({
+          label: "fetures",
+          multiline: true,
+        }),
+        inthebox: fields.array(
+          fields.object({
+            name: fields.text({ label: "Name" }),
+            quantity: fields.integer({ label: "Quantity" }),
+          }),
+          {
+            itemLabel: (props) => props.fields.name.value,
+          }
+        ),
+        // Image Max , Min 1, 2
       },
     }),
     speakers: collection({
       label: "Speakers",
       slugField: "title",
       path: "src/content/speakers/*",
-      format: { contentField: "content" },
+      format: "json",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.document({
@@ -111,7 +118,7 @@ export default config({
       label: "Earphones",
       slugField: "title",
       path: "src/content/earphones/*",
-      format: { contentField: "content" },
+      format: "json",
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
         content: fields.document({
@@ -136,6 +143,43 @@ export default config({
           label: "Information",
           multiline: true,
         }),
+      },
+    }),
+  },
+  singletons: {
+    openSource: singleton({
+      label: "Open Source",
+      path: "src/data/open-source",
+      format: "json",
+      schema: {
+        items: fields.array(
+          fields.object({
+            name: fields.text({ label: "Name" }),
+            description: fields.text({ label: "Description", multiline: true }),
+            githubUser: fields.text({ label: "GithHub User" }),
+            githubRepo: fields.text({ label: "Github Repo" }),
+            status: fields.select({
+              label: "Status",
+              options: [
+                { label: "Active", value: "Active" },
+                { label: "Community", value: "Community Maintained" },
+                { label: "Experimental", value: "Experimental" },
+              ],
+              defaultValue: "Active",
+            }),
+            links: fields.array(
+              fields.object({
+                name: fields.text({ label: "Name" }),
+                url: fields.url({ label: "URL" }),
+              }),
+              {
+                label: "Links",
+                itemLabel: (props) => props.fields.name.value,
+              }
+            ),
+          }),
+          { itemLabel: (props) => props.fields.name.value }
+        ),
       },
     }),
   },

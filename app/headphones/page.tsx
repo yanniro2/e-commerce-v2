@@ -18,9 +18,9 @@ export default async function Page() {
           key={product.entry.title}
           title={product.entry.title}
           slug={`headphones/${product.slug}`}
-          img={product.entry.img ?? ""} // Use nullish coalescing operator
+          img={product.entry.product ?? ""} // Use nullish coalescing operator
           newProduct={product.entry.newProduct}
-          details={product.entry.details}
+          details={product.entry.description}
           flex={"flex-row"}
         />
       ))}
@@ -30,9 +30,9 @@ export default async function Page() {
           key={product.entry.title}
           title={product.entry.title}
           slug={`/headphones/${product.slug}`}
-          img={product.entry.img ?? ""} // Use nullish coalescing operator
+          img={product.entry.product ?? ""} // Use nullish coalescing operator
           newProduct={product.entry.newProduct}
-          details={product.entry.details}
+          details={product.entry.description}
           flex={`${index % 2 === 0 ? "flex-row-reverse" : "flex-row"}`}
         />
       ))}

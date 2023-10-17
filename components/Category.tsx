@@ -15,7 +15,7 @@ export default async function Category() {
             key={category.slug}
             className="w-1/3 h-2/3  bg-gray rounded-xl relative flex items-center justify-center flex-col pt-[5rem]">
             <Image
-              src={category.entry.avatar?? ""}
+              src={category.entry.Desktop ?? ""}
               alt="category img"
               className=" absolute top-0 left-1/2 -translate-y-1/4 w-full h-full -translate-x-1/2 object-contain"
               width={500}
