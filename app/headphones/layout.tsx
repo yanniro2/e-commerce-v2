@@ -1,5 +1,7 @@
 import Category from "@/components/Category";
 import Review from "@/components/Review";
+import Header from "../Header";
+import Footer from "../Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +14,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-    return <div className="mt-[4rem]">{children}
+    return (
+      <div className="mt-[4rem]">
+        <Header />
+        {children}
         <Category />
-        <Review/>
-    </div>;
+        <Review />
+        <Footer />
+      </div>
+    );
 }
