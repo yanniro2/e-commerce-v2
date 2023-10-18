@@ -1,6 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import Number from "./Number";
+
+interface ProductItem {
+  name: string;
+  quantity: number | null;
+}
+
 type ProductPageProps = {
   props: {
     name: string;
@@ -11,7 +17,7 @@ type ProductPageProps = {
     price: string;
     quantity: number;
     features: string;
-    inthebox: { value: string; name: string; quantity: number }[];
+    inthebox: ProductItem[];
   };
 };
 
