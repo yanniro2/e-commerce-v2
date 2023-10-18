@@ -48,11 +48,33 @@ export default config({
         title: fields.slug({ name: { label: "Title" } }),
         product: fields.image({
           label: "Desktop  Product Image",
-          description: "Select image for product ",
+          description: "Select image for Gallery ",
           // This will output the images in the "public" directory
           directory: "public/desktop/category/headphones/product",
           publicPath: "/desktop/category/headphones/product",
         }),
+        max: fields.image({
+          label: "Desktop Max Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/headphones/product",
+          publicPath: "/desktop/category/headphones/product",
+        }),
+        min_1: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/headphones/product",
+          publicPath: "/desktop/category/headphones/product",
+        }),
+        min_2: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/headphones/product",
+          publicPath: "/desktop/category/headphones/product",
+        }),
+
         newProduct: fields.checkbox({
           label: "New Product",
           description: "Select for this is a new Product",
