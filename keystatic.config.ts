@@ -106,65 +106,137 @@ export default config({
       },
     }),
     speakers: collection({
-      label: "Speakers",
+      label: "speakers",
       slugField: "title",
       path: "src/content/speakers/*",
       format: "json",
       schema: {
+        name: fields.text({ label: "Name" }),
         title: fields.slug({ name: { label: "Title" } }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: true,
-        }),
-        img: fields.image({
-          label: "speakers Product Image",
-          description: "Select image for product ",
+        product: fields.image({
+          label: "Desktop  Product Image",
+          description: "Select image for Gallery ",
           // This will output the images in the "public" directory
-          directory: "public/assets/speakers/desktop/",
-          publicPath: "/assets/speakers/desktop/",
+          directory: "public/desktop/category/speakers/product",
+          publicPath: "/desktop/category/speakers/product",
         }),
+        max: fields.image({
+          label: "Desktop Max Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/speakers/product",
+          publicPath: "/desktop/category/speakers/product",
+        }),
+        min_1: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/speakers/product",
+          publicPath: "/desktop/category/speakers/product",
+        }),
+        min_2: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/speakers/product",
+          publicPath: "/desktop/category/speakers/product",
+        }),
+
         newProduct: fields.checkbox({
           label: "New Product",
           description: "Select for this is a new Product",
         }),
-        details: fields.text({
-          label: "Information",
+        description: fields.text({
+          label: "Product Description",
           multiline: true,
         }),
+        price: fields.text({
+          label: "Price",
+        }),
+        quantity: fields.integer({
+          label: "Quantity",
+        }),
+        features: fields.text({
+          label: "fetures",
+          multiline: true,
+        }),
+        inthebox: fields.array(
+          fields.object({
+            name: fields.text({ label: "Name" }),
+            quantity: fields.integer({ label: "Quantity" }),
+          }),
+          {
+            itemLabel: (props) => props.fields.name.value,
+          }
+        ),
+        // Image Max , Min 1, 2
       },
     }),
     earphones: collection({
-      label: "Earphones",
+      label: "earphones",
       slugField: "title",
       path: "src/content/earphones/*",
       format: "json",
       schema: {
+        name: fields.text({ label: "Name" }),
         title: fields.slug({ name: { label: "Title" } }),
-        content: fields.document({
-          label: "Content",
-          formatting: true,
-          dividers: true,
-          links: true,
-          images: true,
-        }),
-        img: fields.image({
-          label: "earphones Product Image",
-          description: "Select image for product ",
+        product: fields.image({
+          label: "Desktop  Product Image",
+          description: "Select image for Gallery ",
           // This will output the images in the "public" directory
-          directory: "public/assets/earphones/desktop/",
-          publicPath: "/assets/earphones/desktop/",
+          directory: "public/desktop/category/earphones/product",
+          publicPath: "/desktop/category/earphones/product",
         }),
+        max: fields.image({
+          label: "Desktop Max Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/earphones/product",
+          publicPath: "/desktop/category/earphones/product",
+        }),
+        min_1: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/earphones/product",
+          publicPath: "/desktop/category/earphones/product",
+        }),
+        min_2: fields.image({
+          label: "Desktop Min Gallery Image",
+          description: "Select image for Gallery ",
+          // This will output the images in the "public" directory
+          directory: "public/desktop/category/earphones/product",
+          publicPath: "/desktop/category/earphones/product",
+        }),
+
         newProduct: fields.checkbox({
           label: "New Product",
           description: "Select for this is a new Product",
         }),
-        details: fields.text({
-          label: "Information",
+        description: fields.text({
+          label: "Product Description",
           multiline: true,
         }),
+        price: fields.text({
+          label: "Price",
+        }),
+        quantity: fields.integer({
+          label: "Quantity",
+        }),
+        features: fields.text({
+          label: "fetures",
+          multiline: true,
+        }),
+        inthebox: fields.array(
+          fields.object({
+            name: fields.text({ label: "Name" }),
+            quantity: fields.integer({ label: "Quantity" }),
+          }),
+          {
+            itemLabel: (props) => props.fields.name.value,
+          }
+        ),
+        // Image Max , Min 1, 2
       },
     }),
   },

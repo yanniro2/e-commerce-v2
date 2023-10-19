@@ -2,7 +2,30 @@
   "name": "XX99 Mark I Headphones",
   "title": "XX99 Mark I Headphones",
   "product": "/desktop/category/headphones/product/xx-99-mark-i-headphones/product.jpg",
+  "max": "/desktop/category/headphones/product/xx-99-mark-i-headphones/max.jpg",
+  "min_1": "/desktop/category/headphones/product/xx-99-mark-i-headphones/min_1.jpg",
+  "min_2": "/desktop/category/headphones/product/xx-99-mark-i-headphones/min_2.jpg",
   "newProduct": false,
-  "description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
-  "inthebox": []
+  "description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. ",
+  "price": "1750",
+  "quantity": 10,
+  "features": "As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.\n\nFrom the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver comfort and uncompromising sound. Its closed-back design delivers up to 27 dB of passive noise cancellation, reducing resonance by reflecting sound to a dedicated absorber. For connectivity, a specially tuned cable is included with a balanced gold connector.",
+  "inthebox": [
+    {
+      "name": "Headphone Unit",
+      "quantity": 1
+    },
+    {
+      "name": "Replacement Earcups",
+      "quantity": 2
+    },
+    {
+      "name": "User Manual",
+      "quantity": 1
+    },
+    {
+      "name": "3.5mm 5m Audio Cable",
+      "quantity": 1
+    }
+  ]
 }

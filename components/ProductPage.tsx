@@ -84,34 +84,34 @@ function ProductPage({ props }: ProductPageProps) {
           ))}
         </div>
       </div>
-      <div className="container h-[80vh] mx-auto">
-        <div className="grid grid-cols-3 gap-4 p-4">
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            1
+      <div className="container h-[80vh] mx-auto py-[2rem]">
+        <div className="grid grid-rows-2 grid-cols-3 w-full h-full gap-[2rem]">
+          <div className=" row-start-1 row-end-2 col-start-1 col-end-2">
+            <Image
+              src={props.min_1}
+              width={500}
+              height={500}
+              alt="img gallery min 1"
+              className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
+            />
           </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            2
+          <div className=" row-start-2 row-end-3 col-start-1 col-end-2">
+            <Image
+              src={props.min_2}
+              width={500}
+              height={500}
+              alt="img gallery min 2"
+              className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
+            />
           </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            3
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            4
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            5
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            6
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            7
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            8
-          </div>
-          <div className="bg-white border border-black p-4 text-3xl text-center">
-            9
+          <div className=" row-start-1 row-end-3 col-start-2 col-end-4">
+            <Image
+              src={props.max}
+              width={1000}
+              height={1000}
+              alt="img gallery max"
+              className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
+            />
           </div>
         </div>
       </div>

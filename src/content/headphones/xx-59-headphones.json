@@ -2,7 +2,30 @@
   "name": "XX59 Headphones",
   "title": "XX59 Headphones",
   "product": "/desktop/category/headphones/product/xx-59-headphones/product.jpg",
+  "max": "/desktop/category/headphones/product/xx-59-headphones/max.jpg",
+  "min_1": "/desktop/category/headphones/product/xx-59-headphones/min_1.jpg",
+  "min_2": "/desktop/category/headphones/product/xx-59-headphones/min_2.jpg",
   "newProduct": false,
   "description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-  "inthebox": []
+  "price": "899",
+  "quantity": 5,
+  "features": "These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.\n\nMore than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.",
+  "inthebox": [
+    {
+      "name": "Headphone Unit",
+      "quantity": 1
+    },
+    {
+      "name": "Replacement Earcups",
+      "quantity": 2
+    },
+    {
+      "name": "User Manual",
+      "quantity": 1
+    },
+    {
+      "name": "3.5mm 5m Audio Cable",
+      "quantity": 1
+    }
+  ]
 }

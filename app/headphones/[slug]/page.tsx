@@ -1,7 +1,7 @@
 import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../../../keystatic.config";
 import ProductPage from "../../../components/ProductPage";
-
+import YoumayLike from "@/components/YoumayLike";
 // Define the ProductItem type
 type ProductItem = {
   name: string;
@@ -27,5 +27,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
     inthebox: slugs.inthebox as ProductItem[], // Ensure the type is compatible
   };
 
-  return <ProductPage props={modifiedSlugs} />;
+  return (
+    <>
+      <ProductPage props={modifiedSlugs} />
+      <YoumayLike />
+    </>
+  );
 }
