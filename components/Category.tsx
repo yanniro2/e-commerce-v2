@@ -3,6 +3,7 @@ import { createReader } from "@keystatic/core/reader";
 import keystaticConfig from "../keystatic.config";
 import Image from 'next/image';
 import React from 'react'
+import Link from "next/link";
 const reader = createReader(process.cwd(), keystaticConfig);
 
 export default async function Category() {
@@ -22,9 +23,9 @@ export default async function Category() {
               height={500}
             />
             <h1 className="h6 mt-[3rem]">{category.entry.title}</h1>
-            <a href={category.slug} className="btn btn-3">
+            <Link href={`/${category.slug}`} className="btn btn-3">
               Shop &#8250;
-            </a>
+            </Link>
           </div>
         ))}
       </div>
