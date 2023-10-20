@@ -19,7 +19,11 @@ type CartContextType = {
   addItemToCart: (item: Item) => void;
   removeItemFromCart: (itemId: number) => void;
   editItemInCart: (itemId: number, updatedItem: Item) => void;
-  clearCart: () => void; // Added clearCart function
+  clearCart: () => void;
+  handleClick: () => void;
+  hide: boolean;
+
+  // Added clearCart function
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -27,10 +31,15 @@ export const CartContext = createContext<CartContextType>({
   addItemToCart: () => {},
   removeItemFromCart: () => {},
   editItemInCart: () => {},
-  clearCart: () => {}, // Added a default empty function for clearCart
+  clearCart: () => {},
+  handleClick: () => {},
+  hide: false,
+  // Added a default empty function for clearCart
 });
 
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
+  const [hide, setHide] = useState<boolean>(false);
+
   const [cart, setCart] = useState<Item[]>([]);
 
   const addItemToCart = (item: Item) => {
@@ -50,6 +59,10 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
+  const handleClick = () => {
+    setHide(() => !hide);
+    console.log("handle click", hide);
+  };
 
   return (
     <CartContext.Provider
@@ -58,7 +71,9 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
         addItemToCart,
         removeItemFromCart,
         editItemInCart,
-        clearCart, // Added clearCart to the value
+        clearCart,
+        handleClick,
+        hide, // Added clearCart to the value
       }}>
       {children}
     </CartContext.Provider>

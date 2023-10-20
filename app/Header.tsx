@@ -4,13 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Cart from "@/components/Cart";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "@/components/CartContext";
 
 const Header = () => {
-  const [hide, setHide] = useState<boolean>(false);
-  const handleClick = () => {
-    setHide(() => !hide);
-  };
+  const { handleClick } = useContext(CartContext);
   const pathName = usePathname();
   const links = [
     { label: "home", href: "/" },
@@ -54,7 +52,7 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      {hide && <Cart hide={hide} handleClick={handleClick} />}
+      <Cart />
     </>
   );
 };

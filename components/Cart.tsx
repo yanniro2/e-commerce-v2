@@ -1,13 +1,10 @@
+"use client";
 import React from "react";
 import CartItem from "./CartItem";
-
-const Cart = ({
-  handleClick,
-  hide,
-}: {
-  handleClick: () => void;
-  hide: boolean;
-}) => {
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
+const Cart = () => {
+  const { handleClick, hide } = useContext(CartContext);
   return (
     <>
       {hide && (
