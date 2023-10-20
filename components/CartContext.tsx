@@ -50,10 +50,6 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
-  const [hide, setHide] = useState<boolean>(false);
-  const handleClick = () => {
-    setHide(() => !hide);
-  };
 
   return (
     <CartContext.Provider
@@ -65,7 +61,6 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
         clearCart, // Added clearCart to the value
       }}>
       {children}
-      {hide && <Cart hide={hide} handleClick={handleClick} />}
     </CartContext.Provider>
   );
 };
