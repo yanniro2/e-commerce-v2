@@ -51,7 +51,7 @@ function ProductPage({ props }: ProductPageProps) {
   return (
     <section className="w-screen h-full flex items-center justify-center flex-col">
       <div className="container pt-[4rem]">
-        <a href="/headphones" className="items-start  opacity-50 capitalize">
+        <a href="./" className="items-start opacity-50 capitalize">
           go back
         </a>
       </div>
