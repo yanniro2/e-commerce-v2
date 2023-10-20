@@ -24,23 +24,27 @@ const Cart = () => {
                 Remove all
               </button>
             </div>
-            <div className="overflow-scroll flex flex-col gap-[1rem] h-min">
-              {/* <CartItem /> */}
-              {cart.length === 0 ? (
-                <div className="h5 text-primary text-center">No Item Add</div>
-              ) : (
-                cart.map((data) => <CartItem key={data.id} />)
-              )}
-            </div>
-            <div className="w-full h-[8rem] flex-col py-[2rem] flex gap-[1rem]">
-              <div className="flex items-center justify-between">
-                <div className="p-body uppercase text-black opacity-50">
-                  total
+            {cart.length === 0 ? (
+              <div className="h6 text-primary  text-center">No Item Add</div>
+            ) : (
+              <>
+                <div className="overflow-scroll flex flex-col gap-[1rem] h-min">
+                  {/* <CartItem /> */}
+                  {cart.map((data) => (
+                    <CartItem key={data.id} />
+                  ))}
                 </div>
-                <div className="h6">$5396</div>
-              </div>
-              <button className="btn btn-1 w-full">checkout</button>
-            </div>
+                <div className="w-full h-[8rem] flex-col py-[2rem] flex gap-[1rem]">
+                  <div className="flex items-center justify-between">
+                    <div className="p-body uppercase text-black opacity-50">
+                      total
+                    </div>
+                    <div className="h6">$5396</div>
+                  </div>
+                  <button className="btn btn-1 w-full">checkout</button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
