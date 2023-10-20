@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Number from "./Number";
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 interface ProductItem {
   name: string;
@@ -25,6 +28,26 @@ type ProductPageProps = {
 };
 
 function ProductPage({ props }: ProductPageProps) {
+  const { addItemToCart } = useContext(CartContext);
+
+  const generateId = (): number => {
+    return Math.floor(Math.random() * 10000); // Replace this with a proper unique ID generation logic
+  };
+  const handleAddToCart = () => {
+    const newItem = {
+      id: generateId(), // Assuming generateId is a function that generates a unique ID
+      name: props.name,
+      title: props.title,
+      product: props.product,
+      newProduct: props.newProduct,
+      description: props.description,
+      price: parseFloat(props.price), // Convert the price to a number
+      quantity: props.quantity,
+      features: props.features,
+      inthebox: props.inthebox,
+    };
+    addItemToCart(newItem);
+  };
   return (
     <section className="w-screen h-full flex items-center justify-center flex-col">
       <div className="container pt-[4rem]">
@@ -50,7 +73,9 @@ function ProductPage({ props }: ProductPageProps) {
           <div className="h6 font-semibold">${props.price}</div>
           <div className="flex items-center gap-[2rem]">
             <Number quantity={props.quantity} />
-            <button className="btn btn-1">add to cart</button>
+            <button className="btn btn-1" onClick={handleAddToCart}>
+              add to cart
+            </button>
           </div>
         </div>
         <div className="left w-full h-full flex items-center justify-center pr-[3rem]">

@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { CartContext } from "@/components/CartContext";
 
 const Header = () => {
-  const { handleClick } = useContext(CartContext);
+  const { handleClick, cart } = useContext(CartContext);
   const pathName = usePathname();
   const links = [
     { label: "home", href: "/" },
@@ -42,13 +42,20 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <button onClick={handleClick}>
+          <button onClick={handleClick} className="relative">
             <Image
               src="/desktop/header/icon-cart.svg"
               alt="shop icon"
               width={23}
               height={20}
             />
+            {cart.length === 0 ? (
+              <></>
+            ) : (
+              <div className="w-[2rem] h-[2rem] bg-primary absolute -top-[1rem] -right-[1rem] rounded-full text-white flex items-center justify-center font-semibold">
+                {cart.length}
+              </div>
+            )}
           </button>
         </div>
       </nav>

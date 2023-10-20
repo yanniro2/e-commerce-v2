@@ -63,6 +63,7 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
     setHide(() => !hide);
     console.log("handle click", hide);
   };
+  
 
   return (
     <CartContext.Provider
