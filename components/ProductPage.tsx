@@ -18,6 +18,9 @@ type ProductPageProps = {
     quantity: number;
     features: string;
     inthebox: ProductItem[];
+    min_1: string;
+    min_2: string;
+    max: string;
   };
 };
 

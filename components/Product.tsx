@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-// import { Image } from "astro:assets";
+
 
 type Props = {
   title: string;
