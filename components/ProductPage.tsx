@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import { useContext } from "react";
 import Number from "./Number";
 import { CartContext } from "./CartContext";
-import { useContext } from "react";
 
 interface ProductItem {
   name: string;
@@ -48,6 +47,7 @@ function ProductPage({ props }: ProductPageProps) {
     };
     addItemToCart(newItem);
   };
+
   return (
     <section className="w-screen h-full flex items-center justify-center flex-col">
       <div className="container pt-[4rem]">

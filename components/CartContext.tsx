@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  createContext,
-  useState,
-  FC,
-  useContext,
-  ReactNode,
-} from "react";
+import React, { createContext, useState, FC, ReactNode } from "react";
 
 // Define the type for your item
 type Item = {

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import CartItem from "./CartItem";
 import { CartContext } from "./CartContext";
 import { useContext } from "react";
@@ -31,7 +30,7 @@ const Cart = () => {
                 <div className="overflow-scroll flex flex-col gap-[1rem] h-min">
                   {/* <CartItem /> */}
                   {cart.map((data) => (
-                    <CartItem key={data.id} />
+                    <CartItem key={data.id} data={data} />
                   ))}
                 </div>
                 <div className="w-full h-[8rem] flex-col py-[2rem] flex gap-[1rem]">
