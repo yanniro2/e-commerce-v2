@@ -28,7 +28,8 @@ const CartItem = ({ data }: any) => {
         </h1>
       </div>
 
-      <Number quantity={10} />
+      {/* <Number quantity={10} /> */}
+      <div className="p-body font-semibold">{data.noOfItems}</div>
     </div>
   );
 };

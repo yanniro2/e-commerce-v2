@@ -1,37 +1,31 @@
 "use client";
-import React, { useState } from "react";
+
 
 interface NumProps {
   quantity: number;
+  noOfItems: number;
+  handleDecrement: () => void; // Assuming handleDecrement does not return anything
+  handleIncrement: () => void; // Assuming handleIncrement does not return anything
 }
 
-const Num: React.FC<NumProps> = ({ quantity }) => {
-  const [number, setNumber] = useState<number>(1);
-
-  const handleIncrement = () => {
-    if (number < quantity) {
-      setNumber(number + 1);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (number > 1) {
-      setNumber(number - 1);
-    }
-  };
-
+const Num: React.FC<NumProps> = ({
+  quantity,
+  noOfItems,
+  handleDecrement,
+  handleIncrement,
+}) => {
   return (
     <div className="bg-gray p-3 flex items-center gap-5">
       <button
         onClick={handleDecrement}
-        disabled={number === 1}
+        disabled={noOfItems === 1}
         className="cursor-pointer p-1 text-black opacity-50 hover:text-primary transition hover:opacity-100">
         -
       </button>
-      <span>{number}</span>
+      <span>{noOfItems}</span>
       <button
         onClick={handleIncrement}
-        disabled={number === quantity}
+        disabled={noOfItems === quantity}
         className="cursor-pointer p-1  text-black opacity-50 hover:text-primary transition hover:opacity-100">
         +
       </button>

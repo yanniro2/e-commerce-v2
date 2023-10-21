@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Number from "./Number";
 import { CartContext } from "./CartContext";
 
@@ -28,6 +28,19 @@ type ProductPageProps = {
 
 function ProductPage({ props }: ProductPageProps) {
   const { addItemToCart } = useContext(CartContext);
+  const [noOfItems, setNoOfItems] = useState<number>(1);
+
+  const handleIncrement = () => {
+    if (noOfItems < props.quantity) {
+      setNoOfItems(noOfItems + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (noOfItems > 1) {
+      setNoOfItems(noOfItems - 1);
+    }
+  };
 
   const generateId = (): number => {
     return Math.floor(Math.random() * 10000); // Replace this with a proper unique ID generation logic
@@ -44,6 +57,7 @@ function ProductPage({ props }: ProductPageProps) {
       quantity: props.quantity,
       features: props.features,
       inthebox: props.inthebox,
+      noOfItems: noOfItems,
     };
     addItemToCart(newItem);
   };
@@ -72,7 +86,12 @@ function ProductPage({ props }: ProductPageProps) {
 
           <div className="h6 font-semibold">${props.price}</div>
           <div className="flex items-center gap-[2rem]">
-            <Number quantity={props.quantity} />
+            <Number
+              quantity={props.quantity}
+              handleIncrement={handleIncrement}
+              handleDecrement={handleDecrement}
+              noOfItems={noOfItems}
+            />
             <button className="btn btn-1" onClick={handleAddToCart}>
               add to cart
             </button>
