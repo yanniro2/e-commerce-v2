@@ -3,6 +3,7 @@ import React, { createContext, useState, FC, ReactNode } from "react";
 
 // Define the type for your item
 type Item = {
+  noOfItems: number;
   id: number;
   name: string;
   price: number;
@@ -28,6 +29,7 @@ export const CartContext = createContext<CartContextType>({
   clearCart: () => {},
   handleClick: () => {},
   hide: false,
+
   // Added a default empty function for clearCart
 });
 
@@ -35,6 +37,8 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [hide, setHide] = useState<boolean>(false);
 
   const [cart, setCart] = useState<Item[]>([]);
+
+ 
 
   const addItemToCart = (item: Item) => {
     setCart((prevCart) => [...prevCart, item]);
@@ -68,7 +72,8 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
         editItemInCart,
         clearCart,
         handleClick,
-        hide, // Added clearCart to the value
+        hide,
+        // Added clearCart to the value
       }}>
       {children}
     </CartContext.Provider>

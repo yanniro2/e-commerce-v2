@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Number from "../components/Number";
+
 
 const CartItem = ({ data }: any) => {
   function getShortName(longName: string, maxLength: number) {
@@ -24,7 +24,7 @@ const CartItem = ({ data }: any) => {
           {getShortName(data.title, 10)}
         </h3>
         <h1 className="p tracking-wide font-bold text-black opacity-50">
-          $2999
+          ${data.price * data.noOfItems}
         </h1>
       </div>
 

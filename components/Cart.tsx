@@ -38,7 +38,7 @@ const Cart = () => {
                     <div className="p-body uppercase text-black opacity-50">
                       total
                     </div>
-                    <div className="h6">$5396</div>
+                    <div className="h6">$64326</div>
                   </div>
                   <button className="btn btn-1 w-full">checkout</button>
                 </div>
