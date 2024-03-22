@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <section className="w-screen h-screen bg-black">
+    <section className="w-screen h-screen bg-black relative">
       <div className="container mx-auto h-full flex items-center justify-center">
         <div className="left flex items-start justify-center flex-col gap-[1rem]">
           <h3 className="uppercase font-Manrope text-[14px] font-normal tracking-[10px] text-white opacity-50">
@@ -17,9 +17,9 @@ const Hero = () => {
         </div>
         <div className="right flex items-center justify-center p-[5rem]">
           <Image
-            src="/home/desktop/image-hero.png"
+            src="/assets/home/desktop/image-hero.png"
             alt="hero img"
-            className="object-cover drop-shadow-md shadow-lg"
+            className="object-contain drop-shadow-md shadow-lg h-screen absolute right-0 bottom-0 scale-125"
             width={1000}
             height={1000}
           />
