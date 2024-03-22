@@ -7,14 +7,14 @@ const BannerMain = () => {
       <div className="container mx-auto bg-primary h-full rounded-xl flex">
         <div className="left relative h-full">
           <Image
-            src="/desktop/banner/image-speaker-zx9.png"
+            src="/assets/home/desktop/image-speaker-zx9.png"
             width={410}
             height={493}
             alt="banner img"
             className="w-full h-full object-contain z-20 scale-75 absolute bottom-0"
           />
           <Image
-            src="/desktop/banner/pattern-circles.svg"
+            src="/assets/home/desktop/pattern-circles.svg"
             alt="bg banner"
             className="absolute w-full h-full top-0 left-0 right-0 bottom-0 z-10 object-contain"
             width={944}

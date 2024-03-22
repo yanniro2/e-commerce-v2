@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="w-[100px] h-[4px] bg-primary absolute top-0 left-0"></div>
         <div className="w-1/2 h-full flex justify-between flex-col items-start">
           <Image
-            src="/desktop/header/logo.svg"
+            src="/assets/shared/desktop/logo.svg"
             alt="logo img"
             className="object-contain"
             width={143}

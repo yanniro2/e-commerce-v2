@@ -21,7 +21,7 @@ const Review = () => {
         </div>
         <div className="right flex h-full items-center justify-center">
           <Image
-            src="/review/desktop/image-best-gear.jpg"
+            src="/assets/shared/desktop/image-best-gear.jpg"
             width={1000}
             height={1000}
             alt="review img"
