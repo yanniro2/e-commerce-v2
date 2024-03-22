@@ -22,7 +22,7 @@ const Header = () => {
         <div className="container mx-auto py-8 text-white flex items-center justify-between border-b-[1px] border-b-bGray">
           <a href="/">
             <Image
-              src="/desktop/header/logo.svg"
+              src="/assets/shared/desktop/logo.svg"
               alt="logo img"
               className="object-contain"
               width={143}
@@ -44,7 +44,7 @@ const Header = () => {
           </ul>
           <button onClick={handleClick} className="relative">
             <Image
-              src="/desktop/header/icon-cart.svg"
+              src="/assets/shared/desktop/icon-cart.svg"
               alt="shop icon"
               width={23}
               height={20}
