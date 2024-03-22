@@ -32,7 +32,7 @@ function Product({ title, slug, img, newProduct, details, flex }: Props) {
         </div>
         <div className="left w-full h-full flex items-center justify-center pr-[3rem]">
           <Image
-            src={img}
+            src={`/assets/shared/desktop${img}`}
             width={1000}
             height={1000}
             alt="product img"
