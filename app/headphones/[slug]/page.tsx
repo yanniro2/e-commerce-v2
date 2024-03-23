@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       ) : (
         // <h1>shows</h1>
         <h1 className="container mx-auto pt-[4rem] text-center  font-semibold uppercase text-xl">
-          No product founds go
+          No product found go
           <Link
             href="/"
             className="text-primary hover:underline transition-all pl-3">

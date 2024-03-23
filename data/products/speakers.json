@@ -3,72 +3,77 @@
   "products": [
     {
       "id": 102,
+      "slug": "product-zx7-speaker",
       "name": "ZX7 Speaker",
+      "title": "ZX7 Speaker",
+      "product": "zx7-speaker.jpg",
+      "newProduct": false,
       "description": "Stream high-quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represent the top-of-the-line powered speakers for home or studio use.",
-      "price": 3500,
-      "features": [
-        "Flat diaphragm tweeter cone for fast response rate and excellent high frequencies.",
-        "Woofers made from aluminum for unique and clear sound.",
-        "XLR inputs for connectivity to a mixer.",
-        "Encased MDF wooden enclosure to minimize acoustic resonance.",
-        "Dual connectivity options: Bluetooth or traditional optical and RCA input.",
-        "Included wireless remote for easy volume control and input source switching."
-      ],
-      "inBoxItems": [
-        "2x Speaker unit",
-        "2x Speaker cloth panel",
-        "1x User manual",
-        "1x 3.5mm 7.5m audio cable",
-        "1x 7.5m optical cable"
-      ],
-      "relatedProducts": [
+      "price": "3500",
+      "quantity": 10,
+      "features": "Flat diaphragm tweeter cone for fast response rate and excellent high frequencies.\nWoofers made from aluminum for unique and clear sound.\nXLR inputs for connectivity to a mixer.\nEncased MDF wooden enclosure to minimize acoustic resonance.\nDual connectivity options: Bluetooth or traditional optical and RCA input.\nIncluded wireless remote for easy volume control and input source switching.",
+      "inthebox": [
         {
-          "name": "ZX9 Speaker",
-          "link": "link_to_product_page"
+          "name": "Speaker unit",
+          "quantity": 2
         },
         {
-          "name": "XX99 Mark I",
-          "link": "link_to_product_page"
+          "name": "Speaker cloth panel",
+          "quantity": 2
         },
         {
-          "name": "XX59",
-          "link": "link_to_product_page"
+          "name": "User manual",
+          "quantity": 1
+        },
+        {
+          "name": "3.5mm 7.5m audio cable",
+          "quantity": 1
+        },
+        {
+          "name": "7.5m optical cable",
+          "quantity": 1
         }
-      ]
+      ],
+      "min_1": "min-image-1.jpg",
+      "min_2": "min-image-2.jpg",
+      "max": "max-image.jpg"
     },
     {
       "id": 101,
+      "slug": "product-zx9-speaker",
       "name": "ZX9 Speaker",
+      "title": "ZX9 Speaker",
+      "product": "zx9-speaker.jpg",
+      "newProduct": false,
       "description": "Upgrade your sound system with the all-new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
-      "price": 4500,
-      "features": [
-        "Multiple connectivity options: Bluetooth, optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs.",
-        "Improved Bluetooth technology offers near-lossless audio quality at up to 328ft (100m) range.",
-        "Planar diaphragm tweeter for clear, natural-sounding highs.",
-        "6.5” aluminum alloy bass unit for powerful room-shaking bass.",
-        "Responds to subtle waveforms for new sensations from old songs."
-      ],
-      "inBoxItems": [
-        "2x Speaker unit",
-        "2x Speaker cloth panel",
-        "1x User manual",
-        "1x 3.5mm 10m audio cable",
-        "1x 10m optical cable"
-      ],
-      "relatedProducts": [
+      "price": "4500",
+      "quantity": 10,
+      "features": "Multiple connectivity options: Bluetooth, optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs.\nImproved Bluetooth technology offers near-lossless audio quality at up to 328ft (100m) range.\nPlanar diaphragm tweeter for clear, natural-sounding highs.\n6.5” aluminum alloy bass unit for powerful room-shaking bass.\nResponds to subtle waveforms for new sensations from old songs.",
+      "inthebox": [
         {
-          "name": "ZX7 Speaker",
-          "link": "link_to_product_page"
+          "name": "Speaker unit",
+          "quantity": 2
         },
         {
-          "name": "XX99 Mark I",
-          "link": "link_to_product_page"
+          "name": "Speaker cloth panel",
+          "quantity": 2
         },
         {
-          "name": "XX59",
-          "link": "link_to_product_page"
+          "name": "User manual",
+          "quantity": 1
+        },
+        {
+          "name": "3.5mm 10m audio cable",
+          "quantity": 1
+        },
+        {
+          "name": "10m optical cable",
+          "quantity": 1
         }
-      ]
+      ],
+      "min_1": "min-image-1.jpg",
+      "min_2": "min-image-2.jpg",
+      "max": "max-image.jpg"
     }
   ]
 }

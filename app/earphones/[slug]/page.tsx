@@ -1,35 +1,25 @@
-import { createReader } from "@keystatic/core/reader";
-import keystaticConfig from "../../../keystatic.config";
+import React from "react";
+import data from "../../../data/products/earphones.json";
 import ProductPage from "../../../components/ProductPage";
 import YoumayLike from "@/components/YoumayLike";
-// Define the ProductItem type
-type ProductItem = {
-  name: string;
-  quantity: number | null;
-};
-
-const reader = createReader(process.cwd(), keystaticConfig);
-
-export default async function Page({ params }: { params: { slug: string } }) {
-  const slugs = await reader.collections.earphones.read(params.slug);
-
-  if (!slugs) {
-    return <div>No Products</div>;
-  }
-
-  const product = slugs.product ?? ""; // Default to an empty string if product is null
-  const quantity = slugs.quantity ?? 0; // Default quantity to 0 if it's null
-
-  const modifiedSlugs = {
-    ...slugs,
-    product,
-    quantity,
-    inthebox: slugs.inthebox as ProductItem[], // Ensure the type is compatible
-  };
-
+import Link from "next/link";
+export default function Page({ params }: { params: { slug: string } }) {
+  const current = data.products.find((product) => product.slug === params.slug);
   return (
     <>
-      <ProductPage props={modifiedSlugs} />
+      {current ? (
+        <ProductPage props={current} />
+      ) : (
+        // <h1>shows</h1>
+        <h1 className="container mx-auto pt-[4rem] text-center  font-semibold uppercase text-xl">
+          No product found go
+          <Link
+            href="/"
+            className="text-primary hover:underline transition-all pl-3">
+            home
+          </Link>
+        </h1>
+      )}
       <YoumayLike />
     </>
   );

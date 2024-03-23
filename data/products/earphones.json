@@ -3,37 +3,40 @@
   "products": [
     {
       "id": 301,
+      "slug": "product-yx1-earphones",
       "name": "YX1 Wireless Earphones",
+      "title": "YX1 Wireless Earphones",
+      "product": "yx1-wireless-earphones.jpg",
+      "newProduct": false,
       "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
-      "price": 599,
-      "features": [
-        "Experience unrivalled stereo sound with innovative acoustic technology.",
-        "Improved ergonomics designed for full-day wearing.",
-        "Customizable controls for volume, music, calls, and voice assistants.",
-        "7-hour battery life, extendable up to 28 hours with charging case.",
-        "Splash-resistant design available in white, grey, and classic black."
-      ],
-      "inBoxItems": [
-        "2x Earphone unit",
-        "6x Multi-size earplugs",
-        "1x User manual",
-        "1x USB-C charging cable",
-        "1x Travel pouch"
-      ],
-      "relatedProducts": [
+      "price": "599",
+      "quantity": 10,
+      "features": "Experience unrivalled stereo sound with innovative acoustic technology.\nImproved ergonomics designed for full-day wearing.\nCustomizable controls for volume, music, calls, and voice assistants.\n7-hour battery life, extendable up to 28 hours with charging case.\nSplash-resistant design available in white, grey, and classic black.",
+      "inthebox": [
         {
-          "name": "XX99 Mark I",
-          "link": "link_to_product_page"
+          "name": "Earphone unit",
+          "quantity": 2
         },
         {
-          "name": "XX59",
-          "link": "link_to_product_page"
+          "name": "Multi-size earplugs",
+          "quantity": 6
         },
         {
-          "name": "ZX9 Speaker",
-          "link": "link_to_product_page"
+          "name": "User manual",
+          "quantity": 1
+        },
+        {
+          "name": "USB-C charging cable",
+          "quantity": 1
+        },
+        {
+          "name": "Travel pouch",
+          "quantity": 1
         }
-      ]
+      ],
+      "min_1": "min-image-1.jpg",
+      "min_2": "min-image-2.jpg",
+      "max": "max-image.jpg"
     }
   ]
 }
