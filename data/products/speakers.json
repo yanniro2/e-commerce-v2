@@ -1,0 +1,74 @@
+{
+  "category": "Speakers",
+  "products": [
+    {
+      "id": 102,
+      "name": "ZX7 Speaker",
+      "description": "Stream high-quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represent the top-of-the-line powered speakers for home or studio use.",
+      "price": 3500,
+      "features": [
+        "Flat diaphragm tweeter cone for fast response rate and excellent high frequencies.",
+        "Woofers made from aluminum for unique and clear sound.",
+        "XLR inputs for connectivity to a mixer.",
+        "Encased MDF wooden enclosure to minimize acoustic resonance.",
+        "Dual connectivity options: Bluetooth or traditional optical and RCA input.",
+        "Included wireless remote for easy volume control and input source switching."
+      ],
+      "inBoxItems": [
+        "2x Speaker unit",
+        "2x Speaker cloth panel",
+        "1x User manual",
+        "1x 3.5mm 7.5m audio cable",
+        "1x 7.5m optical cable"
+      ],
+      "relatedProducts": [
+        {
+          "name": "ZX9 Speaker",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "XX99 Mark I",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "XX59",
+          "link": "link_to_product_page"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "name": "ZX9 Speaker",
+      "description": "Upgrade your sound system with the all-new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+      "price": 4500,
+      "features": [
+        "Multiple connectivity options: Bluetooth, optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs.",
+        "Improved Bluetooth technology offers near-lossless audio quality at up to 328ft (100m) range.",
+        "Planar diaphragm tweeter for clear, natural-sounding highs.",
+        "6.5” aluminum alloy bass unit for powerful room-shaking bass.",
+        "Responds to subtle waveforms for new sensations from old songs."
+      ],
+      "inBoxItems": [
+        "2x Speaker unit",
+        "2x Speaker cloth panel",
+        "1x User manual",
+        "1x 3.5mm 10m audio cable",
+        "1x 10m optical cable"
+      ],
+      "relatedProducts": [
+        {
+          "name": "ZX7 Speaker",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "XX99 Mark I",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "XX59",
+          "link": "link_to_product_page"
+        }
+      ]
+    }
+  ]
+}

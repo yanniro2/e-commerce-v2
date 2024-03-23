@@ -1,0 +1,39 @@
+{
+  "category": "Earphones",
+  "products": [
+    {
+      "id": 301,
+      "name": "YX1 Wireless Earphones",
+      "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+      "price": 599,
+      "features": [
+        "Experience unrivalled stereo sound with innovative acoustic technology.",
+        "Improved ergonomics designed for full-day wearing.",
+        "Customizable controls for volume, music, calls, and voice assistants.",
+        "7-hour battery life, extendable up to 28 hours with charging case.",
+        "Splash-resistant design available in white, grey, and classic black."
+      ],
+      "inBoxItems": [
+        "2x Earphone unit",
+        "6x Multi-size earplugs",
+        "1x User manual",
+        "1x USB-C charging cable",
+        "1x Travel pouch"
+      ],
+      "relatedProducts": [
+        {
+          "name": "XX99 Mark I",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "XX59",
+          "link": "link_to_product_page"
+        },
+        {
+          "name": "ZX9 Speaker",
+          "link": "link_to_product_page"
+        }
+      ]
+    }
+  ]
+}
