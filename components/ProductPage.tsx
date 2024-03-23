@@ -13,6 +13,7 @@ type ProductPageProps = {
   props: {
     name: string;
     title: string;
+    slug: string;
     product: string;
     newProduct: boolean;
     description: string;
@@ -48,6 +49,7 @@ function ProductPage({ props }: ProductPageProps) {
   const handleAddToCart = () => {
     const newItem = {
       id: generateId(), // Assuming generateId is a function that generates a unique ID
+      slug: props.slug,
       name: props.name,
       title: props.title,
       product: props.product,
@@ -98,13 +100,13 @@ function ProductPage({ props }: ProductPageProps) {
           </div>
         </div>
         <div className="left w-full h-full flex items-center justify-center pr-[3rem]">
-          {/* <Image
-            src={props.product}
+          <Image
+            src={`/assets/${props.slug}/desktop/image-category-page-preview.jpg`}
             width={1000}
             height={1000}
             alt="product img"
             className="rounded-xl object-cover"
-          /> */}
+          />
         </div>
       </div>
 
@@ -134,31 +136,31 @@ function ProductPage({ props }: ProductPageProps) {
       <div className="container h-[80vh] mx-auto py-[2rem]">
         <div className="grid grid-rows-2 grid-cols-3 w-full h-full gap-[2rem]">
           <div className=" row-start-1 row-end-2 col-start-1 col-end-2">
-            {/* <Image
-              src={props.min_1}
+            <Image
+              src={`/assets/${props.slug}/desktop/image-gallery-1.jpg`}
               width={500}
               height={500}
               alt="img gallery min 1"
               className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
-            /> */}
+            />
           </div>
           <div className=" row-start-2 row-end-3 col-start-1 col-end-2">
-            {/* <Image
-              src={props.min_2}
+            <Image
+              src={`/assets/${props.slug}/desktop/image-gallery-2.jpg`}
               width={500}
               height={500}
               alt="img gallery min 2"
               className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
-            /> */}
+            />
           </div>
           <div className=" row-start-1 row-end-3 col-start-2 col-end-4">
-            {/* <Image
-              src={props.max}
+            <Image
+              src={`/assets/${props.slug}/desktop/image-gallery-3.jpg`}
               width={1000}
               height={1000}
               alt="img gallery max"
               className="rounded-xl object-cover w-full h-full hover:scale-105 cursor-pointer transition"
-            /> */}
+            />
           </div>
         </div>
       </div>
