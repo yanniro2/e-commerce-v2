@@ -3,20 +3,22 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { GrFacebook, GrInstagram, GrTwitter } from "react-icons/gr";
+import { usePathname } from "next/navigation";
 const Footer = () => {
-    
-    const links = [
-      { label: "home", href: "/" },
-      { label: "headphones", href: "/headphones" },
-      { label: "speakers", href: "/speakers" },
-      { label: "earphones", href: "/earphones" },
-    ];
+  const links = [
+    { label: "home", href: "/" },
+    { label: "headphones", href: "/headphones" },
+    { label: "speakers", href: "/speakers" },
+    { label: "earphones", href: "/earphones" },
+  ];
 
-    const social_links = [
-      { icon: <GrFacebook/>, href: "/facebook" },
-      { icon: <GrInstagram/>, href: "/instagram" },
-      { icon: <GrTwitter/>, href: "/twitter" },
-    ];
+  const social_links = [
+    { icon: <GrFacebook />, href: "/facebook" },
+    { icon: <GrInstagram />, href: "/instagram" },
+    { icon: <GrTwitter />, href: "/twitter" },
+  ];
+
+  const pathName = usePathname();
   return (
     <footer className="w-full h-[50vh] bg-black">
       <div className="container mx-auto flex py-[5rem] h-full relative">
@@ -44,7 +46,15 @@ const Footer = () => {
           <ul className="flex items-end gap-5 justify-end">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="link">
+                <Link
+                  href={link.href}
+                  className={`${
+                    (pathName === link.href && pathName !== "/") ||
+                    (pathName.startsWith(link.href) && link.href !== "/") ||
+                    (pathName === "/" && link.href === "/")
+                      ? "link-active"
+                      : "link"
+                  }`}>
                   {link.label}
                 </Link>
               </li>
@@ -63,6 +73,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer
