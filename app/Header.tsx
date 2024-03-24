@@ -16,6 +16,7 @@ const Header = () => {
     { label: "speakers", href: "/speakers" },
     { label: "earphones", href: "/earphones" },
   ];
+
   return (
     <>
       <nav className="w-full h-min bg-black fixed top-0 left-0 right-0 z-50">
@@ -35,7 +36,11 @@ const Header = () => {
                 <Link
                   href={link.href}
                   className={`${
-                    pathName === link.href ? "link-active" : "link"
+                    (pathName === link.href && pathName !== "/") ||
+                    (pathName.startsWith(link.href) && link.href !== "/") ||
+                    (pathName === "/" && link.href === "/")
+                      ? "link-active"
+                      : "link"
                   }`}>
                   {link.label}
                 </Link>
