@@ -1,8 +1,15 @@
 "use client";
-import React, { createContext, useState, FC, ReactNode } from "react";
+import React, {
+  createContext,
+  useState,
+  FC,
+  ReactNode,
+  useEffect,
+} from "react";
 
 // Define the type for your item
 type Item = {
+  quantity: number;
   noOfItems: number;
   id: number;
   name: string;
@@ -17,8 +24,8 @@ type CartContextType = {
   clearCart: () => void;
   handleClick: () => void;
   hide: boolean;
-
-  // Added clearCart function
+  totalQuantity: number;
+  totalPrice: number;
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -29,19 +36,31 @@ export const CartContext = createContext<CartContextType>({
   clearCart: () => {},
   handleClick: () => {},
   hide: false,
-
-  // Added a default empty function for clearCart
+  totalQuantity: 0,
+  totalPrice: 0,
 });
 
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [hide, setHide] = useState<boolean>(false);
-
   const [cart, setCart] = useState<Item[]>([]);
 
- 
-
   const addItemToCart = (item: Item) => {
-    setCart((prevCart) => [...prevCart, item]);
+    // Check if the item already exists in the cart
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      // If the item exists in the cart, replace its quantity
+      setCart((prevCart) =>
+        prevCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: item.quantity }
+            : cartItem
+        )
+      );
+    } else {
+      // If the item does not exist in the cart, add it to the cart
+      setCart((prevCart) => [...prevCart, item]);
+    }
   };
 
   const removeItemFromCart = (itemId: number) => {
@@ -57,11 +76,28 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
+
   const handleClick = () => {
     setHide(() => !hide);
     console.log("handle click", hide);
   };
-  
+
+  const [totalQuantity, setTotalQuantity] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+
+  useEffect(() => {
+    // Calculate total quantity and total price when cart changes
+    const newTotalQuantity = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+    const newTotalPrice = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+    setTotalQuantity(newTotalQuantity);
+    setTotalPrice(newTotalPrice);
+  }, [cart]);
 
   return (
     <CartContext.Provider
@@ -73,7 +109,8 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
         clearCart,
         handleClick,
         hide,
-        // Added clearCart to the value
+        totalQuantity,
+        totalPrice,
       }}>
       {children}
     </CartContext.Provider>

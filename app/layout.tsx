@@ -16,9 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={inter.className}>
-        <CartProvider>{children}</CartProvider>
-      </body>
+      <CartProvider>
+        <body className={inter.className}>{children}</body>
+      </CartProvider>
     </html>
   );
 }

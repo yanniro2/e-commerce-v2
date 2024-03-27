@@ -11,6 +11,7 @@ interface ProductItem {
 
 type ProductPageProps = {
   props: {
+    id: number;
     name: string;
     title: string;
     slug: string;
@@ -48,7 +49,7 @@ function ProductPage({ props }: ProductPageProps) {
   };
   const handleAddToCart = () => {
     const newItem = {
-      id: generateId(), // Assuming generateId is a function that generates a unique ID
+      id: props.id, // Assuming generateId is a function that generates a unique ID
       slug: props.slug,
       name: props.name,
       title: props.title,

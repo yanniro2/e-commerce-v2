@@ -1,9 +1,25 @@
 "use client";
 import CartItem from "./CartItem";
 import { CartContext } from "./CartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 const Cart = () => {
   const { handleClick, hide, cart, clearCart } = useContext(CartContext);
+  const [totalQuantity, setTotalQuantity] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+
+  useEffect(() => {
+    // Calculate total quantity and total price when cart changes
+    const newTotalQuantity = cart.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
+    const newTotalPrice = cart.reduce(
+      (total, item) => total + item.quantity * item.price,
+      0
+    );
+    setTotalQuantity(newTotalQuantity);
+    setTotalPrice(newTotalPrice);
+  }, [cart, handleClick, hide, clearCart, totalPrice]);
   return (
     <>
       {hide && (
@@ -38,7 +54,7 @@ const Cart = () => {
                     <div className="p-body uppercase text-black opacity-50">
                       total
                     </div>
-                    <div className="h6">$64326</div>
+                    <div className="h6">${totalPrice}</div>
                   </div>
                   <button className="btn btn-1 w-full">checkout</button>
                 </div>

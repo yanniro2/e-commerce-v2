@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-
 const CartItem = ({ data }: any) => {
   function getShortName(longName: string, maxLength: number) {
     if (longName.length <= maxLength) {
@@ -10,10 +9,11 @@ const CartItem = ({ data }: any) => {
       return longName.slice(0, maxLength) + "...";
     }
   }
+  // alert(data.img);
   return (
     <div className="w-full flex items-center justify-between">
       <Image
-        src={data.product}
+        src={`/assets/${data.slug}/desktop/image-category-page-preview.jpg`}
         alt="shop icon"
         className="w-[4rem] h-[4rem] rounded-md"
         width={25}
