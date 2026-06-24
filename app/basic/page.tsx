@@ -1,8 +1,12 @@
-import React from 'react'
+"use client";
+
+import React, { useState } from 'react'
 import Number from '../../components/Number';
 import Input from "../../components/Input";
 import Radio from "../../components/Radio";
-const page = () => {
+const Page = () => {
+  const [noOfItems, setNoOfItems] = useState(1);
+
   return (
     <div>
       <div className="container mx-auto py-[1rem]">
@@ -71,7 +75,12 @@ const page = () => {
           <div className="flex justify-between  items-end gap-5">
             <Input  />
             <Radio  />
-            <Number  />
+            <Number
+              quantity={5}
+              noOfItems={noOfItems}
+              handleDecrement={() => setNoOfItems((value) => Math.max(1, value - 1))}
+              handleIncrement={() => setNoOfItems((value) => Math.min(5, value + 1))}
+            />
           </div>
         </div>
       </div>
@@ -79,4 +88,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Page

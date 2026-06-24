@@ -2,6 +2,7 @@
 import CartItem from "./CartItem";
 import { CartContext } from "./CartContext";
 import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 const Cart = () => {
   const { handleClick, hide, cart, clearCart } = useContext(CartContext);
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
@@ -10,11 +11,11 @@ const Cart = () => {
   useEffect(() => {
     // Calculate total quantity and total price when cart changes
     const newTotalQuantity = cart.reduce(
-      (total, item) => total + item.quantity,
+      (total, item) => total + item.noOfItems,
       0
     );
     const newTotalPrice = cart.reduce(
-      (total, item) => total + item.quantity * item.price,
+      (total, item) => total + item.noOfItems * item.price,
       0
     );
     setTotalQuantity(newTotalQuantity);
@@ -56,7 +57,12 @@ const Cart = () => {
                     </div>
                     <div className="h6">${totalPrice}</div>
                   </div>
-                  <button className="btn btn-1 w-full">checkout</button>
+                  <Link
+                    href="/checkout"
+                    className="btn btn-1 w-full text-center"
+                    onClick={handleClick}>
+                    checkout
+                  </Link>
                 </div>
               </>
             )}

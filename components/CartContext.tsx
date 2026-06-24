@@ -12,7 +12,9 @@ type Item = {
   quantity: number;
   noOfItems: number;
   id: number;
+  slug: string;
   name: string;
+  title: string;
   price: number;
 };
 
@@ -43,6 +45,7 @@ export const CartContext = createContext<CartContextType>({
 export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [hide, setHide] = useState<boolean>(false);
   const [cart, setCart] = useState<Item[]>([]);
+  const [isReady, setIsReady] = useState(false);
 
   const addItemToCart = (item: Item) => {
     // Check if the item already exists in the cart
@@ -53,7 +56,7 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
       setCart((prevCart) =>
         prevCart.map((cartItem) =>
           cartItem.id === item.id
-            ? { ...cartItem, quantity: item.quantity }
+            ? { ...cartItem, noOfItems: item.noOfItems }
             : cartItem
         )
       );
@@ -79,7 +82,6 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
   const handleClick = () => {
     setHide(() => !hide);
-    console.log("handle click", hide);
   };
 
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
@@ -88,16 +90,36 @@ export const CartProvider: FC<{ children: ReactNode }> = ({ children }) => {
   useEffect(() => {
     // Calculate total quantity and total price when cart changes
     const newTotalQuantity = cart.reduce(
-      (total, item) => total + item.quantity,
+      (total, item) => total + item.noOfItems,
       0
     );
     const newTotalPrice = cart.reduce(
-      (total, item) => total + item.quantity * item.price,
+      (total, item) => total + item.noOfItems * item.price,
       0
     );
     setTotalQuantity(newTotalQuantity);
     setTotalPrice(newTotalPrice);
   }, [cart]);
+
+  useEffect(() => {
+    const storedCart = window.localStorage.getItem("audiophile-cart");
+
+    try {
+      if (storedCart) {
+        setCart(JSON.parse(storedCart) as Item[]);
+      }
+    } catch {
+      window.localStorage.removeItem("audiophile-cart");
+    }
+
+    setIsReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (isReady) {
+      window.localStorage.setItem("audiophile-cart", JSON.stringify(cart));
+    }
+  }, [cart, isReady]);
 
   return (
     <CartContext.Provider

@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 import Cart from "@/components/Cart";
 import { useContext } from "react";
 import { CartContext } from "@/components/CartContext";
+import { signOut, useSession } from "next-auth/react";
 
 const Header = () => {
   const { handleClick, cart } = useContext(CartContext);
+  const { data: session, status } = useSession();
   const pathName = usePathname();
   const links = [
     { label: "home", href: "/" },
@@ -47,21 +49,38 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <button onClick={handleClick} className="relative">
-            <Image
-              src="/assets/shared/desktop/icon-cart.svg"
-              alt="shop icon"
-              width={23}
-              height={20}
-            />
-            {cart.length === 0 ? (
-              <></>
-            ) : (
-              <div className="w-[2rem] h-[2rem] bg-primary absolute -top-[1rem] -right-[1rem] rounded-full text-white flex items-center justify-center font-semibold">
-                {cart.length}
-              </div>
+          <div className="flex items-center gap-5">
+            {status !== "loading" && (
+              session ? (
+                <button
+                  className="link"
+                  onClick={() => signOut()}>
+                  sign out
+                </button>
+              ) : (
+                <Link
+                  className="link"
+                  href="/login">
+                  sign in
+                </Link>
+              )
             )}
-          </button>
+            <button onClick={handleClick} className="relative">
+              <Image
+                src="/assets/shared/desktop/icon-cart.svg"
+                alt="shop icon"
+                width={23}
+                height={20}
+              />
+              {cart.length === 0 ? (
+                <></>
+              ) : (
+                <div className="w-[2rem] h-[2rem] bg-primary absolute -top-[1rem] -right-[1rem] rounded-full text-white flex items-center justify-center font-semibold">
+                  {cart.length}
+                </div>
+              )}
+            </button>
+          </div>
         </div>
       </nav>
       <Cart />

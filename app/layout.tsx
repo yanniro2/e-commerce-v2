@@ -1,4 +1,5 @@
 import { CartProvider } from "@/components/CartContext";
+import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,9 +21,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <CartProvider>
-        <body className={inter.className}>{children}</body>
-      </CartProvider>
+      <body className={inter.className}>
+        <AuthProvider>
+          <CartProvider>{children}</CartProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
